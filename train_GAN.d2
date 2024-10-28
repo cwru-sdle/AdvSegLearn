@@ -1,0 +1,120 @@
+train_GAN(): {
+  grid-columns: 3
+  segmented_training_epoch(): {
+    # training the seg_model
+    seg_train_dl: {
+      raw image: {
+        text: |md
+          n input channels
+
+        |
+      }
+      mask: {
+        mask: |md
+          m output classes
+        |
+      }
+    }
+    seg_model: {
+      text: |md n -> m |
+    }
+    disc_model: {
+      text: |md m-> 1 |
+    }
+    disc_loss: {
+      text: |md 1-> 1 |
+    }
+    seg_gen_loss: {
+      BCELoss
+      adv_loss
+    }
+    seg_train_dl.raw image -> seg_model
+    seg_model -> seg_gen_loss.BCELoss
+    seg_train_dl.mask -> seg_gen_loss.BCELoss
+    disc_model -> disc_loss
+    disc_model -> seg_gen_loss.adv_loss: {
+      style: {
+        stroke: purple
+      }
+    }
+    seg_model -> disc_model: {
+      style: {
+        stroke: purple
+      }
+    }
+    (seg_gen_loss -> seg_model).style.stroke: red
+    # training the disc_model
+    seg_train_dl.mask -> disc_model -> disc_loss
+    (disc_loss -> disc_model).style.stroke: red
+    (disc_loss -> disc_model).style.stroke: red
+    (disc_loss -> raw_disc_loss).style.stroke: green
+    (disc_loss -> seg_disc_loss).style.stroke: green
+    (seg_gen_loss -> sup_seg_loss).style.stroke: green
+  }
+  unsegmented_training_epoch(): {
+    # training the seg_model
+    unseg_train_dl: {
+      raw image: {
+        text: |md n input channels |
+      }
+    }
+    seg_model: {
+      text: |md n -> m |
+    }
+    disc_model: {
+      test: |md m->1 |
+    }
+    unseg_train_dl.raw image -> seg_model
+    seg_model -> disc_model
+    disc_model -> unseg_gen_loss: {
+      style: {
+        stroke: purple
+      }
+    }
+    seg_model -> unseg_gen_loss
+    (unseg_gen_loss -> seg_model).style.stroke: red
+    (unseg_gen_loss -> unsup_seg_loss).style.stroke: green
+  }
+  validation_epoch(): {
+    seg_val_dl: {
+      raw image: {
+        text: |md
+          n input channels
+
+        |
+      }
+      mask: {
+        mask: |md
+          m output classes
+        |
+      }
+    }
+    seg_model: {
+      text: |md n -> m |
+    }
+    seg_gen_loss: {
+      BCELoss
+      adv_loss
+    }
+    seg_model -> disc_model -> seg_gen_loss.adv_loss
+    seg_val_dl.raw image -> seg_model
+    seg_model -> seg_gen_loss.BCELoss
+    seg_val_dl.mask -> seg_gen_loss.BCELoss
+    (seg_gen_loss -> val_seg_loss).style.stroke: green
+  }
+}
+Legend: {
+  grid-rows: 2
+  text1: |md
+    blue: forward pass
+  |
+  text2: |md
+    red:  backpropogation
+  |
+  text3: |md
+    purple: detatch to avoid backpropogation
+  |
+  text4: |md
+    green: save for ploting
+  |
+}
