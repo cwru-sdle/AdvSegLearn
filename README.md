@@ -7,5 +7,5 @@
  * semi_supervised_loss - a loss function for the semisupervised training loop.
  * adversarial_loss - a loss function for hte unsupervised training loop.
 
-# License
-Probably the MIT License
+# License 
+This package is licensed under the [Apache 2.0 license](LICENSE).
