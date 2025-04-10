@@ -1,0 +1,7 @@
+README.md
+pyproject.toml
+AdvSegLearn/AdvSegLearn.egg-info/PKG-INFO
+AdvSegLearn/AdvSegLearn.egg-info/SOURCES.txt
+AdvSegLearn/AdvSegLearn.egg-info/dependency_links.txt
+AdvSegLearn/AdvSegLearn.egg-info/requires.txt
+AdvSegLearn/AdvSegLearn.egg-info/top_level.txt

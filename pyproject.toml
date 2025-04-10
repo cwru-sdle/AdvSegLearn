@@ -1,0 +1,36 @@
+
+[project]
+name = "AdvSegLearn"
+version = "0.1.0"
+description = "Package for combining traditional and adversarial learning."
+readme = "README.md"
+requires-python = ">=3.7"
+license = "MIT"
+authors = [
+  { name="Anthony Lino", email="aml334@case.edu" }
+]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Operating System :: OS Independent",
+]
+
+dependencies = [
+  "torch",
+  "numpy",
+  "pandas",
+  "scikit-image",
+  "torchvision",
+  "matplotlib",
+  "opencv-python",  # Use the correct pip package name for OpenCV
+  "Pillow"  # This is the pip package name for PIL
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where=["AdvSegLearn"]

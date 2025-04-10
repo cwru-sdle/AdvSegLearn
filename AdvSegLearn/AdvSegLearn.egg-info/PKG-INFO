@@ -1,0 +1,31 @@
+Metadata-Version: 2.4
+Name: AdvSegLearn
+Version: 0.1.0
+Summary: Package for combining traditional and adversarial learning.
+Author-email: Anthony Lino <aml334@case.edu>
+License-Expression: MIT
+Project-URL: Homepage, https://github.com/yourusername/
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: torch
+Requires-Dist: numpy
+Requires-Dist: pandas
+Requires-Dist: scikit-image
+Requires-Dist: torchvision
+Requires-Dist: matplotlib
+Requires-Dist: opencv-python
+Requires-Dist: Pillow
+
+# AdvSegLearn
+## Descriptor
+ This package creates an easy to use api for training models on small datasets with adversarial learning.
+ Important classes are:
+ * Mutliclass_dataset - allows for both paired and unpaired images to be loaded, with built in support for initalized data augmentation and lazy loading data augmentation.
+ * train_GAN - provides api to easily load in different models, datasets and loss functions to the model. Subclassing allows for easy modification of the training loop.
+ * semi_supervised_loss - a loss function for the semisupervised training loop.
+ * adversarial_loss - a loss function for hte unsupervised training loop.
+
+# License
+Probably the MIT License
