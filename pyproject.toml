@@ -1,7 +1,7 @@
 
 [project]
 name = "AdvSegLearn"
-version = "0.1.0"
+version = "0.1.1"
 description = "Package for combining traditional and adversarial learning."
 readme = "README.md"
 requires-python = ">=3.7"
