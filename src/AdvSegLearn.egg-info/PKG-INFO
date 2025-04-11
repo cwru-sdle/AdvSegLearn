@@ -9,6 +9,7 @@ Classifier: Programming Language :: Python :: 3
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
+License-File: LICENSE
 Requires-Dist: torch
 Requires-Dist: numpy
 Requires-Dist: pandas
@@ -17,6 +18,7 @@ Requires-Dist: torchvision
 Requires-Dist: matplotlib
 Requires-Dist: opencv-python
 Requires-Dist: Pillow
+Dynamic: license-file
 
 # AdvSegLearn
 ## Descriptor

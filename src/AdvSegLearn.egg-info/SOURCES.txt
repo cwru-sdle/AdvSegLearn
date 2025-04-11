@@ -1,3 +1,4 @@
+LICENSE
 README.md
 pyproject.toml
 AdvSegLearn/AdvSegLearn.egg-info/PKG-INFO
