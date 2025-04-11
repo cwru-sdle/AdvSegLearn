@@ -27,13 +27,13 @@ jobs:
           python-version: "3.x"
       - name: Clean previous builds
         run: |
-         rm -rf dist/
-         - name: Build release distributions
-          run: |
-            # NOTE: put your own distribution build steps here.
-            python -m pip install build
-            python -m build
-
+          rm -rf dist/
+          
+      - name: Build release distributions
+        run: |
+          # NOTE: put your own distribution build steps here.
+          python -m pip install build
+          python -m build
       - name: Upload distributions
         uses: actions/upload-artifact@v4
         with:
