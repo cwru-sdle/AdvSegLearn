@@ -8,4 +8,4 @@
  * adversarial_loss - a loss function for hte unsupervised training loop.
 
 # License 
-This package is licensed under the [Apache 2.0 license](LICENSE).
+This package is licensed under the [MIT LICENSE](LICENSE).
