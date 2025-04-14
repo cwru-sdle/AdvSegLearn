@@ -28,7 +28,11 @@ jobs:
       - name: Clean previous builds
         run: |
           rm -rf dist/
-          
+      - name: Update pyproject.toml with tag version
+        run: |
+          tag=${GITHUB_REF##*/}
+          echo "Updating version to $tag"
+          sed -i "s/version = .*/version = \"$tag\"/" pyproject.toml
       - name: Build release distributions
         run: |
           # NOTE: put your own distribution build steps here.
